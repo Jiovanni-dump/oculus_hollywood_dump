@@ -1,0 +1,6 @@
+service vendor.power-hal /odm/bin/hw/android.hardware.power-service-meta --schedutil ${vendor.scheduler.schedutil:-false}
+    interface aidl android.hardware.power::IPower/default
+    class hal
+    user root
+    group root system
+    capabilities SYS_ADMIN

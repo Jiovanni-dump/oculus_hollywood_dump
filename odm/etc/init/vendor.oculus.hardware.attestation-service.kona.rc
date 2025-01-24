@@ -1,0 +1,5 @@
+service vendor.oculus.hardware.attestation-service /odm/bin/hw/vendor.oculus.hardware.attestation-service.kona
+    interface aidl vendor.oculus.hardware.attestation.IAttestation/default
+    class hal
+    user system
+    group system root

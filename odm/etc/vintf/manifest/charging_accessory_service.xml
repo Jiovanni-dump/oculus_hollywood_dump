@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<manifest version="1.0" type="device">
+  <hal format="hidl">
+    <name>vendor.oculus.hardware.dock</name>
+    <transport>hwbinder</transport>
+    <version>1.0</version>
+    <interface>
+      <name>IDock</name>
+      <instance>default</instance>
+    </interface>
+  </hal>
+  <hal format="hidl">
+    <name>vendor.oculus.hardware.externalbattery</name>
+    <transport>hwbinder</transport>
+    <version>1.0</version>
+    <interface>
+      <name>IExternalBattery</name>
+      <instance>default</instance>
+    </interface>
+  </hal>
+</manifest>

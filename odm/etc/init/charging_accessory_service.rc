@@ -1,0 +1,18 @@
+service charging_accessory_service /odm/bin/hw/charging_accessory_service
+    interface vendor.oculus.hardware.dock@1.0::IDock default
+    interface vendor.oculus.hardware.externalbattery@1.0::IExternalBattery default
+    class main charger
+    user system
+    group system
+    task_profiles ServiceCapacityLow ServicePerformance
+
+on init
+    chown system system /sys/devices/platform/vendor/vendor:oculus,external_battery/rsoc
+    chown system system /sys/devices/platform/vendor/vendor:oculus,external_battery/connected
+    chown system system /sys/devices/platform/vendor/vendor:oculus,external_battery/status
+    chown system system /sys/devices/platform/vendor/vendor:oculus,external_battery/charger_plugged
+
+on property:vendor.all.modules.ready=1
+    chown system system /sys/devices/platform/vendor/vendor:oculus,charging_dock/docked
+    chown system system /sys/devices/platform/vendor/vendor:oculus,charging_dock/log
+    chown system system /sys/devices/platform/vendor/vendor:oculus,charging_dock/system_battery_capacity

@@ -1,0 +1,3 @@
+on post-fs-data
+    mkdir /data/vendor/flashswap 0700 root root
+    exec - root root system -- /odm/bin/flashswap.sh

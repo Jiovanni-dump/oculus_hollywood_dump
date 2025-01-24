@@ -1,0 +1,77 @@
+#!/system/bin/sh
+
+PATH=/system/bin:$PATH
+LOCK_FILE=/data/local/tmp/fw-init-syncboss.lck
+
+SERVICES=(
+  vendor.oculus.sensors-hal-1-0
+  vendor.oculus.wifi-hal-1-0
+  trackingservice
+  trackingfidelityservice
+  calibration_svr
+  mrsystemservice
+  sensorproxy
+)
+MOCK_SS=vendor.oculus.sensors-mock-hal-1-0
+
+EXCLUDES=()
+
+while (( "$#" )); do
+  case "$1" in
+    --exclude)
+      EXCLUDES+=("$2")
+      shift 2
+      ;;
+    *)
+      ARG=$1
+      shift
+      ;;
+  esac
+done
+
+function _stop() {
+  # also stop mock sensor service in case it accidentally got left on
+  services=($MOCK_SS "${SERVICES[@]}")
+
+  # stop the services in the reverse order in which they were started, note k=NF then k--
+  for service in $(echo ${services[@]} | awk '{for(k=NF; k; k--) {printf("%s ", $(k)) }; print ""}') ; do
+    skip=
+    for exclude in "${EXCLUDES[@]}"; do
+      [[ $service == $exclude ]] && { skip=1; break; }
+    done
+    [[ -n $skip ]] && continue
+    getprop | grep -q init.svc.$service || continue && (echo "Stopping $service" && ([ $service == trackingservice ] && trackingservice_ctl stop || stop $service))
+  done
+}
+
+function _start() {
+  (
+    flock -x -n 9 || { log -t syncboss_consumers_ctl "Cannot start services when fw_init is running"; exit 1; }
+    for service in ${SERVICES[@]} ; do
+      skip=
+      for exclude in "${EXCLUDES[@]}"; do
+        [[ $service == $exclude ]] && { skip=1; break; }
+      done
+      [[ -n $skip ]] && continue
+      getprop | grep -q init.svc.$service || continue && (echo "Starting $service" && ([ $service == trackingservice ] && trackingservice_ctl start || start $service))
+    done
+  ) 9>${LOCK_FILE}
+}
+
+log -t syncboss_consumers_ctl "Running $@"
+
+case "$ARG" in
+start)
+  _start
+  ;;
+stop)
+  _stop
+  ;;
+restart)
+  _stop
+  _start
+  ;;
+*)
+  echo "Usage: syncboss_consumers_ctl [start|stop|restart] [--exclude SERVICE]..."
+  ;;
+esac

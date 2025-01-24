@@ -1,0 +1,11 @@
+<manifest version="1.0" type="device">
+    <hal>
+        <name>vendor.oculus.hardware.graphics.gpucontrol</name>
+        <transport arch="32+64">passthrough</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IGpuControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>

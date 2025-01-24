@@ -1,0 +1,8 @@
+service vendor.dumpstate-1.1 /odm/bin/hw/android.hardware.dumpstate@1.1-service.ovr
+    class hal
+    user system
+    group system
+    interface android.hardware.dumpstate@1.0::IDumpstateDevice default
+    interface android.hardware.dumpstate@1.1::IDumpstateDevice default
+    oneshot
+    disabled

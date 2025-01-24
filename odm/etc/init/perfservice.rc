@@ -1,0 +1,11 @@
+service perfservice /odm/bin/hw/perf_service
+    interface android.hardware.thermal@1.0::IThermal default
+    interface android.hardware.thermal@2.0::IThermal default
+    interface vendor.oculus.hardware.clocks@1.0::IClocks default
+    class hal
+    user root
+    group root system
+
+# restart framework dies
+on property:init.svc.zygote=restarting
+   restart perfservice
