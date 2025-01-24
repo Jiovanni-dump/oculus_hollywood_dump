@@ -1,0 +1,24 @@
+on post-fs-data
+    mkdir /data/oculus 0750 system system
+    mkdir /data/oculus/telemetry 0750 system system
+    mkdir /data/oculus/telemetry/targetedTelemetryConfigs 0750 system system
+    mkdir /data/oculus/telemetry/onDemandTelemetryConfigs 0750 system system
+
+    # delete any stale tmp files that may have been leftover due to a crash or reboot
+    # while a tmp file was being written.
+    rm /data/oculus/telemetry/onDemandTelemetryConfigs/*.tmp
+
+    # sessions and tests data doesn't need to be kept around across boots, so delete the old one here
+    rm /data/oculus/telemetry/session.db
+    rm /data/oculus/telemetry/tests.db
+
+    # delete the old health counters file that contains unreliable data (see D569403144)
+    rm /data/oculus/telemetry/fflogger_health_counters.bin
+
+service telemetry /system_ext/bin/telemetry
+    class main
+    user system
+    group system inet
+    task_profiles ServiceCapacityLow ServicePerformance
+    oom_score_adjust -600
+    shutdown delayed 5

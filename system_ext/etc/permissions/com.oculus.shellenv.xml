@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<permissions>
+    <privapp-permissions package="com.oculus.shellenv">
+        <permission name="android.permission.USE_RESERVED_DISK"/>
+        <permission name="com.oculus.permission.ACCESS_BACKGROUND_HEAD_TRACKING"/>
+        <permission name="com.oculus.permission.ACCESS_BACKGROUND_INPUT_TRACKING"/>
+        <permission name="com.oculus.permission.USE_RESERVED_CORE"/>
+    </privapp-permissions>
+</permissions>

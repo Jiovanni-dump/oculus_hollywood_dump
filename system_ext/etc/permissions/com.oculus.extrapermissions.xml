@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<permissions>
+  <privapp-permissions package="com.oculus.extrapermissions">
+    <permission name="com.oculus.permission.USE_ACCOUNTS_OCULUS" />
+  </privapp-permissions>
+</permissions>

@@ -1,0 +1,19 @@
+{
+    "components": [
+        {
+            "hash": "eb83dfd2c504e514f1e1aa95845c86664df1ab836b02fbaeff15a21bb9d2b100",
+            "name": "auth"
+        },
+        {
+            "hash": "cca82825ee5ec74201c3be14af2bfdfce635ba57b578e4efb8269ae786287984",
+            "name": "override"
+        },
+        {
+            "hash": "3cce51f20d5d494b369905843b9377cb06680a382610edb78beddb5f4583e7ca",
+            "name": "wifi"
+        }
+    ],
+    "full": {
+        "hash": "55609edcfcacf96921c9f07ccefbe04e4ce915ca3fb978c2648f2e8ca334f492"
+    }
+}

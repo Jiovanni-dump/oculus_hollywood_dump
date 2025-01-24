@@ -1,0 +1,33 @@
+####################################
+# from generate-common-build-props
+# These properties identify this partition image.
+####################################
+ro.product.system_ext.brand=oculus
+ro.product.system_ext.device=hollywood
+ro.product.system_ext.manufacturer=Oculus
+ro.product.system_ext.model=Quest 2
+ro.product.system_ext.name=hollywood
+ro.system_ext.build.date=Wed Dec 18 21:08:52 PST 2024
+ro.system_ext.build.date.utc=1734584932
+ro.system_ext.build.fingerprint=oculus/hollywood/hollywood:12/SQ3A.220605.009.A1/51272100091300150:user/release-keys
+ro.system_ext.build.id=SQ3A.220605.009.A1
+ro.system_ext.build.tags=release-keys
+ro.system_ext.build.type=user
+ro.system_ext.build.version.incremental=51272100091300150
+ro.system_ext.build.version.release=12
+ro.system_ext.build.version.release_or_codename=12
+ro.system_ext.build.version.sdk=32
+####################################
+# from variable PRODUCT_SYSTEM_EXT_PROPERTIES
+####################################
+ro.control_privapp_permissions=enforce
+ro.ovr.os.api.version=160
+ro.vros.build.version=72
+media.metrics.enabled=1
+persist.log.tag.PreferencesService=DEBUG
+ro.vros.composer.cac_mode=writeback
+ro.vros.composer.orientation=ROTATION_270
+# Auto-added by post_process_props.py
+persist.sys.usb.config=none
+# end of file
+

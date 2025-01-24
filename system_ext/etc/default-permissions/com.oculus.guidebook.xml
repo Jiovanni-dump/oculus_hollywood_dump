@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+  <exception
+    package="com.oculus.guidebook" >
+    <permission name="com.oculus.permission.FACE_EYE_INTERNAL_API" fixed="false" />
+    <permission name="com.oculus.permission.ORTHOFIT_DATA" fixed="false" />
+  </exception>
+</exceptions>

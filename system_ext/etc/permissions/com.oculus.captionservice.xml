@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<permissions>
+    <privapp-permissions package="com.oculus.captionservice">
+        <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+        <permission name="android.permission.CAPTURE_MEDIA_OUTPUT"/>
+        <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+        <permission name="android.permission.SET_ACTIVITY_WATCHER"/>
+    </privapp-permissions>
+</permissions>

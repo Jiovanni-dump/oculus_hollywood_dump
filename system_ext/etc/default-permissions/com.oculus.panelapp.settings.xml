@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<exceptions>
+  <exception package="com.oculus.panelapp.settings">
+    <permission name="android.permission.BLUETOOTH_ADVERTISE" fixed="true" />
+    <permission name="android.permission.BLUETOOTH_CONNECT" fixed="true" />
+    <permission name="android.permission.BLUETOOTH_SCAN" fixed="true" />
+    <permission name="android.permission.POST_NOTIFICATIONS" fixed="true" />
+  </exception>
+</exceptions>

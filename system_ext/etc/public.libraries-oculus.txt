@@ -1,0 +1,10 @@
+libaudiotapper.oculus.so
+libheadtracker.oculus.so
+libinstsamp.oculus.so
+libossdk.oculus.so
+libparfait.oculus.so
+libripcclient.oculus.so
+libsystemsensoraccess.oculus.so
+libappsensoraccess.oculus.so
+libOVRMrcLib.oculus.so
+libxrstreaminghost.oculus.so

@@ -1,0 +1,2 @@
+libhzos.meta.so
+libhzos_tracking.meta.so

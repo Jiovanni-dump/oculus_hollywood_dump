@@ -1,0 +1,36 @@
+{
+  "en_US": {
+      "chunkSize": 3,
+      "detectionThresholds": [0.533, 0.425],
+      "enableTwoStage": false,
+      "featureSize": 40,
+      "kwsModelConfig": {
+          "modelPath": "ww_model.pt",
+          "modelType": "pytorch",
+          "enableStateful": true,
+          "useBoltNN": true,
+          "stateShapes": [[1,2,40],[1,4,96],[1,4,96],[1,4,96],[1,4,96]]
+      },
+      "frameLevel": true,
+      "kwsDecoderConfig":{
+        "decoderType": "mpv",
+        "mpvDecoderConfig":{
+          "decodingWindow": 33,
+          "smoothingWindow": 3,
+          "numClasses": 21,
+          "targetSubwordSeqs": [[2,3,4,5,6,7],[8,9,10,4,5,6,7]],
+          "targetSeqsTokensWeights": [[0.5,0.5,1.5,1,1.5,2],[0.5,0.5,0.5,1.5,1,1.5,2]],
+          "useSmaSmoothing": true,
+          "fixNorm": true,
+          "isSilenceSeparateClass": true,
+          "fusionMethod": "no-fusion"
+        }
+      },
+      "mean": "mean",
+      "numSuppressedChunks": 33,
+      "smean": "smean",
+      "windowShift": 3,
+      "updatedConfig": true,
+      "updatedDecoderConfig": true
+  }
+}

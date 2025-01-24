@@ -1,0 +1,8 @@
+on property:sys.boot_completed=1
+    start diagnosticscollector
+
+service diagnosticscollector /system_ext/bin/diagnosticscollector
+    class main
+    user system
+    group system
+    task_profiles ServiceCapacityLow ServicePerformance

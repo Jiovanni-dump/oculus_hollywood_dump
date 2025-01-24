@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+  <exception
+    package="com.oculus.magicislandcastingservice" >
+    <permission name="android.permission.RECORD_AUDIO" fixed="true" />
+    <permission name="com.oculus.permission.TRACKING_INJECTION" fixed="true"/>
+  </exception>
+</exceptions>

@@ -1,0 +1,34 @@
+service instsampd /system_ext/bin/instsampd
+    interface aidl oculus.internal.IInstructionSampler/default
+    class late_start
+    user system
+    group system
+    capabilities NET_ADMIN SYS_ADMIN SYS_PTRACE SYSLOG
+    disabled
+
+on property:persist.device_config.oculus_shared_os_services.oculus_mobile_instruction_sampler_enabled=false && \
+   property:ro.vendor.build.type=user
+    stop instsampd
+
+on property:persist.device_config.oculus_shared_os_services.oculus_mobile_instruction_sampler_enabled=true && \
+   property:ro.vendor.build.type=user
+    start instsampd
+
+on property:ro.vendor.build.type=userdebug
+    enable instsampd
+
+on property:ro.vendor.build.type=eng
+    enable instsampd
+
+on property:ovr.instsampd.kptr_restrict_access=request
+    write /proc/sys/kernel/kptr_restrict 1
+    setprop ovr.instsampd.kptr_restrict_access granted
+
+on property:ovr.instsampd.kptr_restrict_access=done
+    write /proc/sys/kernel/kptr_restrict 2
+    setprop ovr.instsampd.kptr_restrict_access deny
+
+on property:ovr.instsampd.set_perf_event_limits=1
+    write /proc/sys/kernel/perf_event_max_sample_rate ${debug.perf_event_max_sample_rate:-100000}
+    write /proc/sys/kernel/perf_cpu_time_max_percent ${debug.perf_cpu_time_max_percent:-25}
+    setprop ovr.instsampd.set_perf_event_limits 0

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.oculus.updater">
+        <permission name="android.permission.DELETE_PACKAGES" />
+        <permission name="android.permission.INSTALL_PACKAGES" />
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_ROLLBACKS" />
+        <permission name="android.permission.NOTIFY_PENDING_SYSTEM_UPDATE" />
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="com.oculus.permission.INSTALL_APEX"/>
+        <permission name="com.oculus.permission.INSTALL_DOWNGRADED_PACKAGES"/>
+        <permission name="oculus.permission.CONTROL_DEVICE_IDLE"/>
+    </privapp-permissions>
+</permissions>

@@ -1,0 +1,11 @@
+<manifest version="1.0" type="framework">
+    <hal format="hidl" override="true">
+        <name>android.hardware.graphics.composer</name>
+        <transport>hwbinder</transport>
+        <version>2.4</version>
+        <interface>
+            <name>IComposer</name>
+            <instance>display</instance>
+        </interface>
+    </hal>
+</manifest>

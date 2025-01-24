@@ -1,0 +1,57 @@
+{
+    "version": "0.1",
+    "mapping": [
+        {
+            "atom_id": -2,
+            "entry_details": {
+                "event_name": "telemetry_metadata",
+                "fields": [
+                    {
+                        "fid": 11,
+                        "fname": "utl_uptime_ms",
+                        "type": {
+                            "metatype": "primitive",
+                            "type": "long"
+                        },
+                        "marked": "optional"
+                    }
+                ]
+            }
+        },
+        {
+            "atom_id": -1,
+            "entry_details": {
+                "event_name": "telemetry_container_atom",
+                "fields": [
+                    {
+                        "fid": 2,
+                        "fname": "uid",
+                        "type": {
+                            "metatype": "primitive",
+                            "type": "int"
+                        },
+                        "marked": "required"
+                    },
+                    {
+                        "fid": 3,
+                        "fname": "metadata_protobuf",
+                        "type": {
+                            "metatype": "primitive",
+                            "type": "embedded"
+                        },
+                        "marked": "optional"
+                    },
+                    {
+                        "fid": 4,
+                        "fname": "client_protobuf",
+                        "type": {
+                            "metatype": "primitive",
+                            "type": "embedded"
+                        },
+                        "marked": "optional"
+                    }
+                ]
+            }
+        }
+    ]
+}

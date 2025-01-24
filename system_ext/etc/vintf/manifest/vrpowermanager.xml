@@ -1,0 +1,10 @@
+<manifest version="1.0" type="framework">
+    <hal format="aidl" optional="true">
+        <name>oculus.internal.power</name>
+        <interface>
+            <name>IVrPowerManager</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>IVrPowerManager/default</fqname>
+    </hal>
+</manifest>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<permissions>
+    <privapp-permissions package="com.facebook.spatial_persistence_service">
+        <permission name="android.permission.ACCESS_NETWORK_STATE"/>
+        <permission name="android.permission.ACCESS_WIFI_STATE"/>
+        <permission name="android.permission.UPDATE_APP_OPS_STATS"/>
+        <permission name="com.oculus.permission.ACCESS_BACKGROUND_HEAD_TRACKING"/>
+        <permission name="com.oculus.permission.ACCESS_TRACKING_ENV"/>
+        <permission name="com.oculus.permission.COLOCATION_API_WRITE_MAP"/>
+        <permission name="com.oculus.permission.IMPORT_EXPORT_IOT_MAP_DATA"/>
+    </privapp-permissions>
+</permissions>

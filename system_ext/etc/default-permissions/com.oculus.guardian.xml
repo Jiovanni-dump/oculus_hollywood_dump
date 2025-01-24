@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<exceptions>
+  <exception package="com.oculus.guardian">
+    <permission name="android.permission.POST_NOTIFICATIONS" fixed="true" />
+    <permission name="com.oculus.permission.USE_SCENE" fixed="true" />
+  </exception>
+</exceptions>

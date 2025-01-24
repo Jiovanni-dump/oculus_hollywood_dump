@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+  <exception
+    package="com.oculus.assistant" >
+    <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="true" />
+    <permission name="android.permission.RECORD_AUDIO" fixed="true" />
+    <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="true" />
+    <permission name="com.oculus.permission.TRACKING_INJECTION" fixed="false" />
+  </exception>
+</exceptions>

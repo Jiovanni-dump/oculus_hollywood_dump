@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<exceptions>
+  <exception package="com.oculus.ocms">
+    <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
+    <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="false" />
+    <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="false" />
+  </exception>
+</exceptions>

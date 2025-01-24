@@ -1,0 +1,7 @@
+    service vrdevice /system_ext/bin/vrdevicemanagerserver
+    class late_start
+    user system
+    group system readproc
+    capabilities SYS_NICE
+    task_profiles ProcessCapacityHigh HighPerformance
+    orchestrator_flags ALLOW_RT

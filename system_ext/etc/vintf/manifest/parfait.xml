@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest version="1.0" type="framework">
+    <hal format="aidl">
+        <name>vendor.meta.parfait</name>
+        <version>1</version>
+        <interface>
+            <name>ITrigger</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IConfigQuery</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>

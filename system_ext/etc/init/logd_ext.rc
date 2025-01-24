@@ -1,0 +1,19 @@
+service logdumpd /system_ext/bin/logdumpd
+    class main
+    user system
+    group system log inet
+    task_profiles ServiceCapacityLow ServicePerformance
+
+on post-fs-data && property:persist.device_config.oculus_shared_os_services.mros_extended_logs_enabled=true
+    start logdumpd
+
+on property:persist.device_config.oculus_shared_os_services.mros_extended_logs_enabled=false
+    stop logdumpd
+
+on post-fs-data
+    mkdir /data/misc/log 0770 system system
+    mkdir /data/misc/logd_ext 0770 logd system
+    mount tmpfs tmpfs /data/misc/logd_ext noexec nosuid nodev
+    chmod 0770 /data/misc/logd_ext
+    chown logd system /data/misc/logd_ext
+    restorecon /data/misc/logd_ext

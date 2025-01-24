@@ -1,0 +1,20 @@
+# Main tracing daemon
+service parfait /system_ext/bin/parfait
+    class late_start
+    user vendor_parfait
+    group system inet
+
+# Base directory for configuration and traces
+on post-fs-data
+    mkdir /data/oculus 0770 vendor_parfait system
+    mkdir /data/oculus/parfait 0770 vendor_parfait system
+    mkdir /data/oculus/parfait/config 0750 vendor_parfait system
+    mkdir /data/oculus/parfait/traces 0770 vendor_parfait system
+    mkdir /data/oculus/parfait/telemetry_logs 0770 vendor_parfait system
+    restorecon_recursive /data/oculus/parfait
+
+on property:init.svc.parfait.enable=1
+    start parfait
+
+on property:init.svc.parfait.enable=0
+    stop parfait

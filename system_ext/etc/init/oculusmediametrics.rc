@@ -1,0 +1,4 @@
+service mediametrics /system_ext/bin/oculusmediametrics
+    class main
+    user media
+    group media

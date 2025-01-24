@@ -1,0 +1,7 @@
+service trackingfidelityservice /system_ext/bin/trackingfidelityservice
+    class late_start
+    user system
+    group system camera
+
+on factorytest
+    start trackingfidelityservice

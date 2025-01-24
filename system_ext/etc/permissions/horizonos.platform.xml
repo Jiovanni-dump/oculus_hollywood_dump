@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<permissions>
+    <!-- Apps requesting an Oculus runtime permission will be granted automatically
+    the new HorizonOS counterpart permission. -->
+    <split-permission name="com.oculus.permission.USE_SCENE">
+        <new-permission name="horizonos.permission.USE_SCENE" />
+    </split-permission>
+
+	<split-permission name="com.oculus.permission.SET_THREAD_POLICY">
+        <new-permission name="horizonos.permission.SET_THREAD_POLICY" />
+    </split-permission>
+
+	<split-permission name="com.oculus.permission.SET_PERF_LEVEL">
+        <new-permission name="horizonos.permission.SET_PERF_LEVEL" />
+    </split-permission>
+
+	<split-permission name="com.oculus.permission.SET_SYSTEM_MODES">
+        <new-permission name="horizonos.permission.SET_SYSTEM_MODES" />
+    </split-permission>
+
+	<split-permission name="com.oculus.permission.READ_VR_DEVICE_PARAMS">
+        <new-permission name="horizonos.permission.READ_VR_DEVICE_PARAMS" />
+    </split-permission>
+
+	<split-permission name="com.oculus.permission.SET_VR_DEVICE_PARAMS">
+        <new-permission name="horizonos.permission.SET_VR_DEVICE_PARAMS" />
+    </split-permission>
+
+    <split-permission name="com.oculus.permission.UPDATE_SECURITY_PRINCIPAL">
+        <new-permission name="horizonos.permission.UPDATE_SECURITY_PRINCIPAL" />
+    </split-permission>
+</permissions>

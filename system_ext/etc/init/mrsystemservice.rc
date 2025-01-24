@@ -1,0 +1,18 @@
+on post-fs-data
+    # Create directory for tracking service information
+    mkdir /data/misc/mrsystemservice 0775 system system
+
+on early-boot
+    # create mrsystem cpuset
+    mkdir /dev/cpuset/mrsystem 0750 root system
+    write /dev/cpuset/mrsystem/cpus 0-3,7
+    write /dev/cpuset/mrsystem/mems 0
+    chmod 0664 /dev/cpuset/mrsystem/tasks
+
+service mrsystemservice /system_ext/bin/mrsystemservice
+    class late_start
+    user system
+    group system camera
+    capabilities SYS_NICE
+    task_profiles mrSystemPolicy
+    orchestrator_flags ALLOW_RT

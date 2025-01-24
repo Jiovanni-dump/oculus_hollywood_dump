@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<permissions>
+    <privapp-permissions package="com.oculus.ocms">
+        <permission name="android.permission.BACKUP"/>
+        <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+        <permission name="android.permission.CLEAR_APP_CACHE"/>
+        <permission name="android.permission.CLEAR_APP_USER_DATA"/>
+        <permission name="android.permission.DELETE_PACKAGES"/>
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.NETWORK_SETTINGS"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.READ_RUNTIME_PROFILES"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+        <permission name="com.oculus.permission.STAGE_FOR_SUBSET_RESTORE"/>
+        <permission name="com.oculus.permission.INSTALL_DOWNGRADED_PACKAGES"/>
+        <permission name="com.oculus.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="oculus.permission.CONTROL_DEVICE_IDLE"/>
+        <permission name="com.oculus.permission.MANAGE_CUSTOM_PIN"/>
+        <permission name="com.oculus.permission.MANAGE_CLOUD_BACKUP_KEYS"/>
+        <permission name="com.oculus.permission.QUIET_FOREGROUND_SERVICE"/>
+        <permission name="com.oculus.permission.USE_INCREMENTAL_ASSET_MANAGER"/>
+    </privapp-permissions>
+</permissions>

@@ -1,0 +1,69 @@
+#line 1 "vendor/meta/sepolicy/sepolicy-common/private/property_contexts"
+# @lint-ignore-every TXT3 LINETOOLONG
+# Property naming conventions:
+# debug.oculus.*: Used for old-style GearVR compatibility
+# ^^^^^^^^ DO NOT create new properties in this namespace
+# persist.ovr.*: Used for persistent, runtime read-write properties
+# ovr.*: Used for non-persistent, runtime read-write properties
+# ro.ovr.*: Used for read-only properties set at build time
+
+ar.wifi.                                                     u:object_r:ar_wifi_prop:s0
+default_prop.                                                u:object_r:ctl_default_prop:s0
+debug.vulkan.profiler.namedsocket                            u:object_r:qcom_pil_prop:s0
+debug.egl.profiler.namedsocket                               u:object_r:qcom_pil_prop:s0
+debug.egl.profiler                                           u:object_r:qcom_pil_prop:s0
+diagnostics.debug.                                           u:object_r:diagnostics_prop:s0
+edts.                                                        u:object_r:edts_prop:s0
+mrsystemservice.                                             u:object_r:mrsystemservice_prop:s0
+oculus.                                                      u:object_r:oculus_prop:s0
+ovr.                                                         u:object_r:oculus_prop:s0
+ovr.audiotapper.                                             u:object_r:audiotapper_prop:s0
+ovr.eps.                                                     u:object_r:eps_prop:s0
+ovr.instsampd.                                               u:object_r:oculus_instsampd_prop:s0
+ovr.lazy_gpumem.                                             u:object_r:debug_prop:s0
+ovr.logging.                                                 u:object_r:oculus_logging_prop:s0
+persist.bolt.unsigned_pd                                     u:object_r:bolt_unsigned_pd_prop:s0
+persist.crashreporter.                                       u:object_r:crashreporter_prop:s0
+persist.cmm.                                                 u:object_r:cameramuxmode_prop:s0
+persist.device_config.oculus_shared_os_services.             u:object_r:device_config_vros_shared_services_prop:s0
+persist.device_config.oculus_shared_os_services.jemalloc_low_ram_performance_mode     u:object_r:device_config_vros_jemalloc_prop:s0
+persist.device_config.oculus_shared_os_services.jemalloc_normal_ram_performance_mode     u:object_r:device_config_vros_jemalloc_prop:s0
+persist.device_config.oculus_shared_os_services.workrooms_nux_state_capture_opt_in u:object_r:device_config_vros_audiomonitor_prop:s0
+persist.device_config.oculus_shared_os_services.xros_audio_aaudio_mmap          u:object_r:device_config_vros_aaudio_prop:s0
+persist.device_config.oculus_shared_os_services.xros_audio_aaudio_mmap_allowlist          u:object_r:device_config_vros_aaudio_prop:s0
+persist.device_config.oculus_shared_os_services.xros_audio_aaudio_mmap_capture  u:object_r:device_config_vros_aaudio_prop:s0
+persist.device_config.oculus_shared_os_services.xros_audio_aaudio_mmap_capture_allowlist          u:object_r:device_config_vros_aaudio_prop:s0
+persist.device_config.oculus_shared_os_services.xros_audio_aaudio_mmap_capture_denylist          u:object_r:device_config_vros_aaudio_prop:s0
+persist.device_config.oculus_shared_os_services.xros_audio_aaudio_mmap_denylist          u:object_r:device_config_vros_aaudio_prop:s0
+persist.device_config.oculus_shared_os_services.xr_external_display             u:object_r:device_config_vros_external_display_prop:s0
+persist.device_config.oculus_shared_os_services_sessionless. u:object_r:device_config_vros_shared_services_sessionless_prop:s0
+persist.device_config.oculus_shared_vision.                  u:object_r:device_config_vros_shared_vision_prop:s0
+persist.device_config.mros_vendor.                           u:object_r:device_config_mros_vendor_prop:s0
+persist.device_config.vros_vendor_sessionless.               u:object_r:device_config_vros_vendor_sessionless_prop:s0
+persist.logd_ext.logdumpd.                                   u:object_r:logd_ext_logdumpd_prop:s0
+persist.osupdater.train.                                     u:object_r:train_prop:s0
+persist.ovr.audiotapper.                                     u:object_r:audiotapper_prop:s0
+persist.ovr.debug.boosted_overlay                            u:object_r:oculus_boosted_overlay_prop:s0
+persist.ovr.lmkd.                                            u:object_r:oculus_lmkd_prop:s0
+persist.ovr.logging.                                         u:object_r:oculus_logging_prop:s0
+persist.ovr.system_resource.                                 u:object_r:oculus_system_resource_prop:s0
+persist.ovr.tracking.                                        u:object_r:oculus_tracking_prop:s0
+persist.ovr.                                                 u:object_r:oculus_prop:s0
+# TODO T190621923 remove telemetry sysprops
+persist.telemetry.                                           u:object_r:telemetry_prop:s0
+ro.boot.bootloader_ipd_offset                                u:object_r:bootloader_ipd_prop:s0
+ro.bootstat.no_error_correction                              u:object_r:bootstat_prop:s0
+ro.config.use_native_telemetry                               u:object_r:exported_config_prop:s0
+ro.device.feature.                                           u:object_r:hzos_device_features_prop:s0 prefix
+ro.hardware.chipname                                         u:object_r:hardware_chipname_prop:s0 exact string
+ro.maintenanceboot.                                          u:object_r:maintenanceboot_prop:s0 prefix
+ro.ovr.                                                      u:object_r:oculus_prop:s0
+ro.surface_flinger.disable_refresh_rate_update               u:object_r:surfaceflinger_prop:s0
+ro.surface_flinger.exclusive_mode_control                    u:object_r:surfaceflinger_prop:s0
+ro.surface_flinger.has_writeback_dpu_cac                     u:object_r:surfaceflinger_prop:s0
+ro.surface_flinger.use_headless_mode                         u:object_r:surfaceflinger_prop:s0
+ro.vros.composer.cac_mode                                    u:object_r:strata_prop:s0
+surface_flinger.enable_dp_mirror                             u:object_r:surfaceflinger_prop:s0
+surface_flinger.use_min_framebuffer_surface                  u:object_r:surfaceflinger_prop:s0
+sys.hmt.mounted                                              u:object_r:oculus_prop:s0
+sys.oem_unlock_allowed                                       u:object_r:sys_oem_unlock_allowed_prop:s0

@@ -1,0 +1,21 @@
+service audiotapper /system_ext/bin/audiotapper
+    class core
+    user system
+    group system
+    disabled
+
+on post-fs-data
+    mkdir /data/audiotapper 0770 system system
+
+on boot && property:ro.build.type=userdebug
+   setprop persist.ovr.audiotapper.enable_service ${persist.ovr.audiotapper.enable_service:-true}
+
+on property:persist.device_config.oculus_shared_os_services.xros_audio_enable_audiotapper=* && property:ro.build.type=user
+    setprop persist.ovr.audiotapper.enable_service ${persist.device_config.oculus_shared_os_services.xros_audio_enable_audiotapper}
+
+on property:persist.ovr.audiotapper.enable_service=true
+    enable audiotapper
+    start audiotapper
+
+on property:persist.ovr.audiotapper.enable_service=false
+    stop audiotapper

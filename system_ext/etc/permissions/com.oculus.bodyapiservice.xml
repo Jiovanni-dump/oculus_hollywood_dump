@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<permissions>
+    <privapp-permissions package="com.oculus.bodyapiservice">
+        <permission name="com.oculus.permission.ACCESS_BACKGROUND_HEAD_TRACKING"/>
+        <permission name="com.oculus.permission.ACCESS_BACKGROUND_INPUT_TRACKING"/>
+    </privapp-permissions>
+</permissions>

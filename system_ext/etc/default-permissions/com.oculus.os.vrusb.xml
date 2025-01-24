@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+  <exception package="com.oculus.os.vrusb">
+    <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="false" />
+  </exception>
+</exceptions>

@@ -1,0 +1,330 @@
+{
+  "events": [
+    {
+      "name": "arvr_cpu_residency",
+      "is_enabled": false
+    },
+    {
+      "name": "arvr_native_telemetry_service_performance",
+      "is_enabled": true,
+      "sample_rate": 0.05
+    },
+    {
+      "name": "arvr_threads",
+      "is_enabled": false
+    },
+    {
+      "name": "camera_added",
+      "is_enabled": false
+    },
+    {
+      "name": "camera_removed",
+      "is_enabled": false
+    },
+    {
+      "name": "ct_mustfix",
+      "is_enabled": true
+    },
+    {
+      "name": "displayport_attach",
+      "is_enabled": false
+    },
+    {
+      "name": "fw_report_summary",
+      "is_enabled": false
+    },
+    {
+      "name": "hal_reboot",
+      "is_enabled": false
+    },
+    {
+      "name": "mic_policy_event",
+      "is_enabled": true,
+      "sample_rate": 0.1
+    },
+    {
+      "name": "moonlight_core_app_download_success",
+      "is_enabled": false
+    },
+    {
+      "name": "moonlight_download_progress",
+      "is_enabled": true,
+      "sample_rate": 0.01
+    },
+    {
+      "name": "moonlight_perf",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_app_started",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_avatar_lipsync_periodic_events",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_cmm_mode_transitions",
+      "is_enabled": true
+    },
+    {
+      "name": "oculus_deepview_video_button_clicked",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_driver_installer_log",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_dyntel_test_v1",
+      "is_enabled": true,
+      "sample_rate": 1.0
+    },
+    {
+      "name": "oculus_dyntel_test_v2",
+      "is_enabled": true,
+      "sample_rate": 0.8
+    },
+    {
+      "name": "oculus_guardian_oneshot",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_guardian_periodic",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_home_search_cta_click",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_home_search_deepview_impression",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_home_search_tile_rendered",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_home_search_typeahead_result",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_home_social_event_pdp_action_button_clicked",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_auth_component",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_capture_qpl_event_point",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_capture_waterfall_event",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_consents",
+      "is_enabled": true,
+      "sample_rate": 1.0
+    },
+    {
+      "name": "oculus_mobile_crash_reports_enabled",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_download_thread_stop_request",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_fbconnect_key_fetching_failure",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_fbconnect_key_fetching_trigger",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_features_used",
+      "is_enabled": true,
+      "sample_rate": 1.0
+    },
+    {
+      "name": "oculus_mobile_handle_notimplemented",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_hardware_info",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_location_service",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_on_trim_memory",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_remote_wipe_fail",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_remote_wipe_requested",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_remote_wipe_retry",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_remote_wipe_success",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_timewarp_layer_prog_cache_count",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mobile_userserver_framework_failure",
+      "is_enabled": true,
+      "sample_rate": 1.0
+    },
+    {
+      "name": "oculus_mobile_userserver_framework_success",
+      "is_enabled": true,
+      "sample_rate": 1.0
+    },
+    {
+      "name": "oculus_mobile_userserver_sync",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_mr_sporadic_event",
+      "is_enabled": true
+    },
+    {
+      "name": "oculus_open_in_vr_impression",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_out_of_volume_detection_test",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_overlays",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_prodtracer_periodic",
+      "is_enabled": true
+    },
+    {
+      "name": "oculus_security_horizon_intent_logging",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_sensor_moved",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_sensors_moved",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_service_performance",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_spatial_persistence_event",
+      "is_enabled": true
+    },
+    {
+      "name": "oculus_spatial_persistence_service_health",
+      "is_enabled": true
+    },
+    {
+      "name": "oculus_store_pdp_gallery_video_played",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_store_pdp_tab_rendered",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_touch_calibrated_data",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_unknown_sources_library_fetch_success",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_vrshell_click",
+      "is_enabled": false
+    },
+    {
+      "name": "oculus_xrs_apk_perf_stats",
+      "is_enabled": false
+    },
+    {
+      "name": "persist_session",
+      "is_enabled": false
+    },
+    {
+      "name": "reactvr_info",
+      "is_enabled": false
+    },
+    {
+      "name": "shellenv_overlay_service_connected",
+      "is_enabled": false
+    },
+    {
+      "name": "shellenv_session_ended_event",
+      "is_enabled": false
+    },
+    {
+      "name": "shellenv_session_started_event",
+      "is_enabled": false
+    },
+    {
+      "name": "syncboss_cam_init_dice_cameras_latency",
+      "is_enabled": false
+    },
+    {
+      "name": "syncboss_start_streaming_dice_cameras_latency",
+      "is_enabled": false
+    },
+    {
+      "name": "syncboss_stop_streaming_dice_cameras_latency",
+      "is_enabled": false
+    },
+    {
+      "name": "syncbossfw",
+      "is_enabled": false
+    },
+    {
+      "name": "telemetry_event_filtering_performance",
+      "is_enabled": true,
+      "sample_rate": 0.01
+    },
+    {
+      "name": "telemetry_service_reporting_error_event",
+      "is_enabled": true
+    },
+    {
+      "name": "validate_device_hmd",
+      "is_enabled": false
+    },
+    {
+      "name": "vr_messenger_mqtt_event",
+      "is_enabled": false
+    }
+  ],
+  "config_id": "offline_config_2",
+  "config_hash": "offline_hash_2",
+  "version": "1.0",
+  "salt": ""
+}

@@ -1,0 +1,25 @@
+on post-fs-data
+    mkdir /data/oculus/bpfagent 0770 system system
+
+service bpfagent /system_ext/bin/bpfagent
+    interface aidl vendor.oculus.hardware.bpfagent.IConfigurator/default
+    interface aidl vendor.oculus.hardware.bpfagent.IStrobemeta/default
+    class late_start
+    class main
+    user system
+    group system inet readproc
+    capabilities DAC_READ_SEARCH SYS_ADMIN SYS_PTRACE SYS_RESOURCE SYSLOG
+    oneshot
+    disabled
+
+on property:ro.vendor.build.type=user && property:persist.device_config.oculus_shared_os_services.oculus_mobile_bpfagent_enabled=true
+    start bpfagent
+
+on property:ro.vendor.build.type=user && property:persist.device_config.oculus_shared_os_services.oculus_mobile_bpfagent_enabled=false
+    stop bpfagent
+
+on property:ro.vendor.build.type=userdebug
+    enable bpfagent
+
+on property:ro.vendor.build.type=eng
+    enable bpfagent

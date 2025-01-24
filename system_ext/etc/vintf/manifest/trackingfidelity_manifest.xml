@@ -1,0 +1,10 @@
+<manifest version="1.0" type="framework">
+    <hal format="aidl" optional="true">
+        <name>oculus.internal</name>
+        <interface>
+            <name>ITrackingFidelityService</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>ITrackingFidelityService/default</fqname>
+    </hal>
+</manifest>

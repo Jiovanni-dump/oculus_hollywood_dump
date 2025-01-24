@@ -1,0 +1,8 @@
+<manifest version="1.0" type="framework">
+    <hal format="aidl">
+        <name>vendor.oculus.hardware.bpfagent</name>
+        <version>1</version>
+        <fqname>IConfigurator/default</fqname>
+        <fqname>IStrobemeta/default</fqname>
+    </hal>
+</manifest>

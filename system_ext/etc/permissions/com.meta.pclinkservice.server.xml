@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<permissions>
+    <privapp-permissions package="com.meta.pclinkservice.server">
+        <permission name="android.permission.ACCESS_NETWORK_STATE"/>
+        <permission name="android.permission.ACCESS_WIFI_STATE"/>
+        <permission name="android.permission.INTERNET"/>
+        <permission name="com.oculus.permission.XRS_OAF_COMMAND"/>
+        <permission name="com.oculus.permission.XRS_OBSERVE_STATE"/>
+    </privapp-permissions>
+</permissions>

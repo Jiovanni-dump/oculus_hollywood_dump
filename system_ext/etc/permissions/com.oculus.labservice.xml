@@ -1,0 +1,5 @@
+<permissions>
+    <privapp-permissions package="com.oculus.labservice">
+        <permission name="android.permission.MANAGE_USB"/>
+    </privapp-permissions>
+</permissions>

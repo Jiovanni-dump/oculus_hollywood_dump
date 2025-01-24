@@ -1,0 +1,35 @@
+service vendor.oculus.hardware.composer-service /system_ext/bin/hw/vendor.oculus.hardware.composer-service
+    class hal graphics strata
+    user system
+    disabled
+    # TODO: is drmrpc required here?
+    group graphics
+    onrestart restart surfaceflinger
+    # TODO: SYS_NICE necessary?
+    capabilities SYS_NICE
+    task_profiles ServiceCapacityLow ServicePerformance
+    orchestrator_flags ALLOW_RT
+
+# General init: reset value for strata enable prop
+on early-boot
+    write /dev/kmsg "Strata init config prop with default value"
+    setprop persist.device_config.oculus_shared_os_services.mros_enable_strata_composer \
+          ${persist.device_config.oculus_shared_os_services.mros_enable_strata_composer:-false}
+
+# General init: strata is enabled via sysprop
+on early-boot && property:persist.device_config.oculus_shared_os_services.mros_enable_strata_composer=true
+    write /dev/kmsg "Strata is being enabled"
+    enable vendor.oculus.hardware.composer-service
+    setprop debug.sf.hwc_service_name display
+    setprop ro.ovr.hwc_service_name display
+
+# Disable Writeback CAC in SF if strata is enabled
+on early-boot && property:ro.vros.composer.cac_mode=writeback \
+        && property:persist.device_config.oculus_shared_os_services.mros_enable_strata_composer=true
+    write /dev/kmsg "Strata in use: disable SF CAC"
+    setprop ro.surface_flinger.has_writeback_dpu_cac 0
+
+# Writeback CAC in SF is enabled by default (unless set by Strata above)
+on early-boot && property:ro.vros.composer.cac_mode=writeback
+    write /dev/kmsg "Strata init SF CAC with default value (if not set)"
+    setprop ro.surface_flinger.has_writeback_dpu_cac 1

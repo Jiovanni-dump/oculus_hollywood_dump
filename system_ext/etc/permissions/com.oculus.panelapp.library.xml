@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<permissions>
+    <privapp-permissions package="com.oculus.panelapp.library">
+        <permission name="android.permission.SET_ACTIVITY_WATCHER"/>
+    </privapp-permissions>
+</permissions>

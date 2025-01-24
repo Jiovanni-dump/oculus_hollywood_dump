@@ -1,0 +1,16 @@
+service audiotapperhost /system_ext/bin/audiotapperhost
+    class late_start
+    user system
+    group system
+    disabled
+
+on init
+    setprop ovr.audiotapper.monitor.consent false
+
+on property:persist.ovr.audiotapper.enable_service=true
+    wait_for_prop init.svc.audiotapper running
+    enable audiotapperhost
+    start audiotapperhost
+
+on property:persist.ovr.audiotapper.enable_service=false
+    stop audiotapperhost

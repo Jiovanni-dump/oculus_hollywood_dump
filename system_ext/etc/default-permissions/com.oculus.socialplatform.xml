@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+  <exception
+    package="com.oculus.socialplatform" >
+    <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="false" />
+    <permission name="android.permission.RECORD_AUDIO" fixed="false" />
+    <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="false" />
+    <permission name="com.oculus.permission.CODEC_AVATAR_CAMERA" fixed="false" />
+  </exception>
+</exceptions>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Keep permissions sorted by package name. -->
+<permissions>
+    <privapp-permissions package="com.oculus.os.cm">
+        <permission name="android.permission.DUMP" />
+        <permission name="android.permission.SET_TIME"/>
+        <permission name="android.permission.SET_TIME_ZONE"/>
+        <permission name="android.permission.WIFI_UPDATE_USABILITY_STATS_SCORE"/>
+        <permission name="oculus.permission.CONTROL_DEVICE_IDLE"/>
+    </privapp-permissions>
+</permissions>

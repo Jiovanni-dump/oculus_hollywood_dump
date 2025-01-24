@@ -1,0 +1,37 @@
+# Initialize the crashreporter directory layout.
+on post-fs-data
+    mkdir /data/misc/crashes/ 771 root system
+    restorecon_recursive /data/system/dropbox
+    restorecon_recursive /data/tombstones
+    restorecon_recursive /data/anr
+    # allow panicreporter to clean up pstore after collecting the report
+    chmod 0750 /sys/fs/pstore
+
+on property:sys.boot_completed=1
+    start panicreporter
+    # delay start of crashreporter daemon until dropbox is created.
+    wait /data/system/dropbox
+    start crashreporterd
+
+# minidumpd64: run the minidump server in a process (64 bit processes)
+service minidumpd64 /system_ext/bin/ovr_crashreporter64 -m
+    class main
+    user system
+    group system readproc
+    task_profiles ServiceCapacityLow ServicePerformance
+
+# crashreporterd: run the exception collector in a process.
+service crashreporterd /system_ext/bin/ovr_crashreporter64 -c
+    class main
+    disabled
+    user system
+    group system
+    task_profiles ServiceCapacityLow ServicePerformance
+
+# panicreporter: report a kernel panic if any.
+service panicreporter /system_ext/bin/ovr_crashreporter64 -k
+    class late_start
+    disabled
+    user system
+    group system log
+    oneshot

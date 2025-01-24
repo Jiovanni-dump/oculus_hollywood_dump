@@ -1,0 +1,5 @@
+service crashtelemetry /system_ext/bin/crashtelemetry
+    class main
+    user system
+    group system
+    task_profiles ServiceCapacityLow ServicePerformance

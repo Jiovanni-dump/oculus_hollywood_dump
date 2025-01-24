@@ -1,0 +1,37 @@
+#!/system/bin/sh
+
+# noglob
+set -f
+
+SERVICE="media.audiotapperhost"
+EXEC="dumpsys -t 20 $SERVICE monitor"
+ARGS="$@"
+
+# check if service is running
+dumpsys -l | grep $SERVICE >/dev/null 2>&1
+
+if [ $? -ne 0 ]; then
+    echo "audiomonitor service is disabled"
+    exit 1
+fi
+
+if [ "$1" = '--bugnub' ]; then
+    test $VERBOSE && echo "sh: BugNub command detected"
+    shift
+fi
+
+COMMAND="$1"
+
+# append "*" by default on start command
+if [ "$COMMAND" = 'start' ]; then
+    shift # shift start command
+    test "$1" = '--consent' && shift # shift --consent argument
+    shift # shift HISTORY argument
+    test "$1" = '-p' && shift # shift -p argument
+    test $# -eq 0 && ARGS+=' *' && test $VERBOSE && echo "sh: appending * to arguments"
+fi
+
+test $VERBOSE && echo "sh: executing $EXEC $ARGS"
+
+EXEC_OUTPUT=$($EXEC $ARGS)
+echo "$EXEC_OUTPUT"

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<permissions>
+    <privapp-permissions package="com.oculus.appsafety">
+        <permission name="android.permission.PACKAGE_VERIFICATION_AGENT"/>
+        <permission name="com.oculus.permission.USE_ACCOUNTS_OCULUS"/>
+        <permission name="com.oculus.permission.USE_DEVICE_AUTH"/>
+    </privapp-permissions>
+</permissions>

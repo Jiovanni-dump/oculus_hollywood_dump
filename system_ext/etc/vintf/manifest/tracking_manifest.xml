@@ -1,0 +1,42 @@
+<manifest version="1.0" type="framework">
+    <hal format="aidl" optional="true">
+        <name>oculus.internal.tracking</name>
+        <interface>
+            <name>IFaceEyeTrackingService</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>IFaceEyeTrackingService/default</fqname>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>oculus.internal.tracking</name>
+        <interface>
+            <name>IHandTrackingService</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>IHandTrackingService/default</fqname>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>oculus.internal.tracking</name>
+        <interface>
+            <name>IInsideOutBodyTrackingService</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>IInsideOutBodyTrackingService/default</fqname>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>oculus.internal.tracking</name>
+        <interface>
+            <name>IMemoryBrokerService</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>IMemoryBrokerService/default</fqname>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>oculus.internal.tracking</name>
+        <interface>
+            <name>ITrackingFidelityModes</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>ITrackingFidelityModes/default</fqname>
+    </hal>
+</manifest>

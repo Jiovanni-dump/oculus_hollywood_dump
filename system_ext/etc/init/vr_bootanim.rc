@@ -1,0 +1,9 @@
+service bootanim /system_ext/bin/vr_bootanimation -m /system_ext/etc/bootanim/meta-horizonos.glb
+    class core animation
+    user graphics
+    group graphics audio
+    oneshot
+    task_profiles ProcessCapacityMax MaxPerformance
+
+on property:service.bootanim.exit_vendor=1
+    write /sys/class/drm/card0-sde-crtc-0/backlight_changes_blocked 0

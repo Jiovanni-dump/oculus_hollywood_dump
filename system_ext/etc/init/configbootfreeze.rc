@@ -1,0 +1,2 @@
+on early-boot
+    exec_background -- /system_ext/bin/configbootfreeze
