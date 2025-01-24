@@ -1,0 +1,13 @@
+on property:persist.device_config.oculus_shared_os_services.aosp_camera_fwk_enabled=true
+    start virtual_camera
+
+service virtual_camera /system/bin/virtual_camera
+    class core
+    user system
+    group system
+    capabilities SYS_NICE
+    rlimit rtprio 10 10
+    task_profiles CameraServiceCapacity CameraServicePerformance
+    orchestrator_flags ALLOW_RT
+    disabled
+    oneshot

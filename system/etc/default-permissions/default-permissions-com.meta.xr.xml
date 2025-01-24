@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+  <exception
+    package="com.oculus.systemdriver">
+    <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="false" />
+    <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="false" />
+    <permission name="com.oculus.permission.EYE_TRACKING" fixed="false" />
+    <permission name="com.oculus.permission.FACE_EYE_INTERNAL_API" fixed="false" />
+    <permission name="com.oculus.permission.RECORD_MR_STREAM" fixed="true" />
+  </exception>
+</exceptions>

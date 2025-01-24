@@ -1,0 +1,22 @@
+[
+    {
+        "Backend": "TorchScript",
+        "Model": "bolt/model.pt",
+        "QEngine": "QNNPACK"
+    },
+    {
+        "Backend": "TorchScript",
+        "Model": "htp/qnn_model.ptl",
+        "QEngine": "QNNPACK"
+    },
+    {
+        "Backend": "TorchScript",
+        "Model": "cpu/model.pt",
+        "QEngine": "QNNPACK"
+    },
+    {
+        "Backend": "TorchScript",
+        "Model": "cpu/model.pt",
+        "QEngine": "FBGEMM"
+    }
+]

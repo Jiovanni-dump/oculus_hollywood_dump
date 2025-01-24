@@ -1,0 +1,205 @@
+<!--
+    Input:
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+-->
+<compatibility-matrix version="4.0" type="framework">
+    <hal format="hidl" optional="false">
+        <name>vendor.display.config</name>
+        <version>2.0</version>
+        <interface>
+            <name>IDisplayConfig</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.meta.hardware.radio.wirelessinsight</name>
+        <version>1.0</version>
+        <interface>
+            <name>IWirelessInsight</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.oculus.hardware.attestation</name>
+        <interface>
+            <name>IAttestation</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.oculus.hardware.bpfagent</name>
+        <interface>
+            <name>IConfigurator</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IStrobemeta</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oculus.hardware.catty</name>
+        <version>1.0</version>
+        <interface>
+            <name>ICatty</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oculus.hardware.catty</name>
+        <version>1.0</version>
+        <interface>
+            <name>ICatty</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oculus.hardware.clocks</name>
+        <version>1.0</version>
+        <interface>
+            <name>IClocks</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oculus.hardware.devicecert</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDeviceCert</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oculus.hardware.dock</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDock</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oculus.hardware.externalbattery</name>
+        <version>1.0</version>
+        <interface>
+            <name>IExternalBattery</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oculus.hardware.graphics.composer</name>
+        <version>1.1</version>
+        <interface>
+            <name>IComposer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oculus.hardware.graphics.gpucontrol</name>
+        <version>1.0</version>
+        <interface>
+            <name>IGpuControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oculus.hardware.keyboxinstaller</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDeviceKeyboxInstaller</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.oculus.hardware.maintenanceboot</name>
+        <interface>
+            <name>IMaintenanceBoot</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oculus.hardware.sensors</name>
+        <version>1.0</version>
+        <interface>
+            <name>ICameraProvider</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IControllerProvider</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IExternalTimingProvider</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IIad</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IImu</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IMag</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IZapper</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oculus.hardware.sensors_java</name>
+        <version>1.0</version>
+        <interface>
+            <name>IPowerstate</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oculus.hardware.wifi</name>
+        <version>1.0</version>
+        <interface>
+            <name>IWifi</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
+        <name>vendor.qti.hardware.display.allocator</name>
+        <version>3.0</version>
+        <interface>
+            <name>IQtiAllocator</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
+        <name>vendor.qti.hardware.display.composer</name>
+        <version>3.0</version>
+        <interface>
+            <name>IQtiComposer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
+        <name>vendor.qti.hardware.display.mapper</name>
+        <version>3.0</version>
+        <interface>
+            <name>IQtiMapper</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <sepolicy>
+        <kernel-sepolicy-version>30</kernel-sepolicy-version>
+        <sepolicy-version>26.0</sepolicy-version>
+        <sepolicy-version>27.0</sepolicy-version>
+        <sepolicy-version>28.0</sepolicy-version>
+        <sepolicy-version>29.0</sepolicy-version>
+        <sepolicy-version>30.0</sepolicy-version>
+        <sepolicy-version>31.0</sepolicy-version>
+        <sepolicy-version>32.0</sepolicy-version>
+    </sepolicy>
+    <avb>
+        <vbmeta-version>1.0</vbmeta-version>
+    </avb>
+</compatibility-matrix>

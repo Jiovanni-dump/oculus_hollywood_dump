@@ -1,0 +1,17 @@
+[
+  {
+    "Model": "bolt/a2e.ptl",
+    "Backend": "TorchScript",
+    "QEngine": "QNNPACK"
+  },
+  {
+    "CpuModel": "cpu/a2e.ptl",
+    "Backend": "TorchScript",
+    "QEngine": "QNNPACK"
+  },
+  {
+    "CpuModel": "cpu/a2e.ptl",
+    "Backend": "TorchScript",
+    "QEngine": "FBGEMM"
+  }
+]

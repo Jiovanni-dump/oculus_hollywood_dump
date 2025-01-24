@@ -1,0 +1,4 @@
+service watchdogd /system/bin/watchdogd 10 20
+    class core
+    seclabel u:r:watchdogd:s0
+    orchestrator_flags ALLOW_RT

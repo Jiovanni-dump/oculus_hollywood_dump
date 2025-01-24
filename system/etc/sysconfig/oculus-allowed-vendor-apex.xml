@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <allowed-vendor-apex package="com.meta.quest" installerPackage="com.oculus.ocms" />
+  <allowed-vendor-apex package="com.meta.xr" installerPackage="com.oculus.ocms" />
+</config>

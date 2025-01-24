@@ -1,0 +1,13 @@
+on property:persist.device_config.oculus_shared_os_services.aosp_camera_fwk_enabled=true
+    setprop config.disable_cameraservice false
+    start cameraserver
+
+service cameraserver /system/bin/cameraserver
+    class main
+    user cameraserver
+    group audio camera input drmrpc
+    ioprio rt 4
+    task_profiles CameraServiceCapacity MaxPerformance
+    rlimit rtprio 10 10
+    oneshot
+    disabled
