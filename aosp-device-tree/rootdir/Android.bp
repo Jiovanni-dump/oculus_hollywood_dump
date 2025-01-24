@@ -1,0 +1,85 @@
+//
+// Copyright (C) 2025 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Init scripts
+sh_binary {
+    name: "init.calibration.sh",
+    src: "bin/init.calibration.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.drmirq.sh",
+    src: "bin/init.drmirq.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.insmod.sh",
+    src: "bin/init.insmod.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.kswapd.sh",
+    src: "bin/init.kswapd.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.set_secnvm_perms.sh",
+    src: "bin/init.set_secnvm_perms.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "set_usb_cdc_mac.sh",
+    src: "bin/set_usb_cdc_mac.sh",
+    vendor: true,
+}
+
+// Init configuration files
+prebuilt_etc {
+    name: "init.hollywood.rc",
+    src: "etc/init.hollywood.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.kona.cgroup.rc",
+    src: "etc/init.kona.cgroup.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.kona.power.rc",
+    src: "etc/init.kona.power.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.kona.rc",
+    src: "etc/init.kona.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.kona.usb.rc",
+    src: "etc/init.kona.usb.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+// fstab
+prebuilt_etc {
+    name: "fstab.persist",
+    src: "etc/fstab.persist",
+    vendor: true,
+}

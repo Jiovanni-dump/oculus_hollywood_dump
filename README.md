@@ -1,0 +1,14 @@
+# hollywood-user 12 SQ3A.220605.009.A1 51272100091300150 release-keys
+- manufacturer: oculus
+- platform: kona
+- codename: hollywood
+- flavor: hollywood-user
+- release: 12
+- id: SQ3A.220605.009.A1
+- incremental: 51272100091300150
+- tags: release-keys
+- fingerprint: oculus/hollywood/hollywood:12/SQ3A.220605.009.A1/51272100091300150:user/release-keys
+- is_ab: true
+- brand: oculus
+- branch: hollywood-user-12-SQ3A.220605.009.A1-51272100091300150-release-keys
+- repo: oculus_hollywood_dump

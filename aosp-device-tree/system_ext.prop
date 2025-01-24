@@ -1,0 +1,7 @@
+media.metrics.enabled=1
+persist.log.tag.PreferencesService=DEBUG
+ro.control_privapp_permissions=enforce
+ro.ovr.os.api.version=160
+ro.vros.build.version=72
+ro.vros.composer.cac_mode=writeback
+ro.vros.composer.orientation=ROTATION_270

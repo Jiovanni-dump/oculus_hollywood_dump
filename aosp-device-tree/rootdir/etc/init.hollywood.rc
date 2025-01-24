@@ -1,0 +1,104 @@
+# Copyright (c) 2009-2012, 2014-2018, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name of The Linux Foundation nor
+#       the names of its contributors may be used to endorse or promote
+#       products derived from this software without specific prior written
+#       permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+import /vendor/etc/init/hw/init.hollywood.debug.rc
+import /vendor/etc/init/hw/init.kona.rc
+import /vendor/etc/init/hw/init.kona.usb.rc
+
+on charger
+    write /sys/devices/virtual/thermal/tz-by-name/batt-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpu-0-0-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpu-0-1-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpu-0-2-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpu-0-3-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpu-1-0-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpu-1-1-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpu-1-2-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpu-1-3-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpu-1-4-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpu-1-5-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpu-1-6-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpu-1-7-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpuss-0-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/cpuss-1-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/fp-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/gpuss-0-fan/mode "disabled"
+    write /sys/devices/virtual/thermal/tz-by-name/gpuss-1-fan/mode "disabled"
+    write /sys/class/hwmon/hwmon3/rpm 0
+    # Disable on-demand charging suspend feature for external_battery
+    write /sys/devices/platform/vendor/vendor:oculus,external_battery/charging_suspend_disable 1
+
+on init
+    start calibration_sh
+
+on post-fs
+    # Create the anti-piracy killswitch token
+    mkdir /persist/srt_push 0770 root system
+
+    # Start syncboss logging before syncboss starts
+    start vendor.catty-1-0
+
+    # Tell fw_init to suppress syncboss reset until the sensorservice starts
+    # during startup.
+    setprop vendor.syncbosshal.wait_for_service true
+
+    # Start fw_init as soon as we can
+    start fw_init
+
+on post-fs-data
+    # Enable WLAN cold boot calibration
+    write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6390/fs_ready 1
+
+on early-boot
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ wlan country_code=0
+
+# Services start here
+
+service calibration_sh /vendor/bin/init.calibration.sh
+    class main
+    user system
+    group root system
+    disabled
+    oneshot
+
+service cnss-daemon /system/vendor/bin/cnss-daemon -n -l
+    class main
+    user system
+    group system inet net_admin wifi
+    capabilities NET_ADMIN
+
+# Property triggers start here
+
+on property:sys.hmt.mounted=1
+    write /sys/devices/platform/vendor/vendor:oculus,external_battery/mount_state 1
+
+on property:sys.hmt.mounted=0
+    write /sys/devices/platform/vendor/vendor:oculus,external_battery/mount_state 0
+
+on property:sys.shutdown.requested=*
+    write /sys/kernel/shutdown_wlan/shutdown 1
+    stop cnss-daemon

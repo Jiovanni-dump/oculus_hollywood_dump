@@ -1,0 +1,1 @@
+/dev/block/bootdevice/by-name/persist     /persist     ext4     noatime,noexec,nosuid,nodev,nosymfollow,barrier=1,sync     wait

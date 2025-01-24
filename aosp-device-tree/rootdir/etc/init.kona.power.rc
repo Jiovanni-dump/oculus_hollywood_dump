@@ -1,0 +1,143 @@
+on charger
+    setprop sys.start_dvfs_init 1
+
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+    write /sys/devices/system/cpu/cpu4/online 0
+    write /sys/devices/system/cpu/cpu5/online 0
+    write /sys/devices/system/cpu/cpu6/online 0
+    write /sys/devices/system/cpu/cpu7/online 0
+
+on init
+    write /dev/stune/foreground/schedtune.sched_boost_no_override 1
+    write /dev/stune/top-app/schedtune.sched_boost_no_override 1
+    write /dev/stune/schedtune.colocate 0
+    write /dev/stune/background/schedtune.colocate 0
+    write /dev/stune/system-background/schedtune.colocate 0
+    write /dev/stune/foreground/schedtune.colocate 0
+    write /dev/stune/top-app/schedtune.colocate 1
+
+on boot
+    setprop sys.start_dvfs_init 1
+
+on property:sys.start_dvfs_init=1
+    write /proc/sys/kernel/sched_migration_cost_ns 0
+
+    # Core control parameters for gold
+    write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 3
+    write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 60
+    write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 30
+    write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 100
+    write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 3
+
+    # Core control parameters for gold+
+    write /sys/devices/system/cpu/cpu7/core_ctl/min_cpus 1
+    write /sys/devices/system/cpu/cpu7/core_ctl/busy_up_thres 60
+    write /sys/devices/system/cpu/cpu7/core_ctl/busy_down_thres 30
+    write /sys/devices/system/cpu/cpu7/core_ctl/offline_delay_ms 100
+    write /sys/devices/system/cpu/cpu7/core_ctl/task_thres 1
+    # Controls how many more tasks should be eligible to run on gold CPUs
+    # w.r.t number of gold CPUs available to trigger assist (max number of
+    # tasks eligible to run on previous cluster minus number of CPUs in
+    # the previous cluster).
+    #
+    # Setting to 3 by default which means there should be at least
+    # 6 tasks eligible to run on gold cluster (tasks running on gold cores
+    # plus misfit tasks on silver cores) to trigger assitance from gold+.
+    write /sys/devices/system/cpu/cpu7/core_ctl/nr_prev_assist_thresh 3
+
+    # Disable Core control on silver
+    write /sys/devices/system/cpu/cpu0/core_ctl/enable 0
+
+    # Setting b.L scheduler parameters
+    write /proc/sys/kernel/sched_upmigrate "95 95"
+    write /proc/sys/kernel/sched_downmigrate "85 85"
+    write /proc/sys/kernel/sched_group_upmigrate 100
+    write /proc/sys/kernel/sched_group_downmigrate 95
+    write /proc/sys/kernel/sched_walt_rotate_big_tasks 1
+
+    write /proc/sys/vm/watermark_scale_factor 120
+
+    # Enable oom_reaper
+    write /sys/module/lowmemorykiller/parameters/oom_reaper 1
+
+    # Enable bus-dcvs
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/polling_interval 40
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/mbps_zones "2288 4577 7110 9155 12298 14236 15258"
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/sample_ms 4
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/io_percent 50
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/hist_memory 20
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/hyst_length 10
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/down_thres 30
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/guard_band_mbps 0
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/up_scale 250
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/idle_mbps 1600
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/max_freq 15258
+
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/polling_interval 40
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/mbps_zones "1720 2929 3879 5931 6881 7980"
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/sample_ms 4
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/io_percent 80
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/hist_memory 20
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/hyst_length 10
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/down_thres 30
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/guard_band_mbps 0
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/up_scale 250
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/idle_mbps 1600
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/max_freq 7980
+
+    write /sys/devices/virtual/npu/msm_npu/pwr 1
+    write /sys/class/devfreq/soc:qcom,npu-llcc-ddr-bw/polling_interval 40
+    write /sys/class/devfreq/soc:qcom,npu-llcc-ddr-bw/bw_hwmon/mbps_zones "1720 2929 3879 5931 6881 7980"
+    write /sys/class/devfreq/soc:qcom,npu-llcc-ddr-bw/bw_hwmon/sample_ms 4
+    write /sys/class/devfreq/soc:qcom,npu-llcc-ddr-bw/bw_hwmon/io_percent 80
+    write /sys/class/devfreq/soc:qcom,npu-llcc-ddr-bw/bw_hwmon/hist_memory 20
+    write /sys/class/devfreq/soc:qcom,npu-llcc-ddr-bw/bw_hwmon/hyst_length 10
+    write /sys/class/devfreq/soc:qcom,npu-llcc-ddr-bw/bw_hwmon/down_thres 30
+    write /sys/class/devfreq/soc:qcom,npu-llcc-ddr-bw/bw_hwmon/guard_band_mbps 0
+    write /sys/class/devfreq/soc:qcom,npu-llcc-ddr-bw/bw_hwmon/up_scale 250
+    write /sys/class/devfreq/soc:qcom,npu-llcc-ddr-bw/bw_hwmon/idle_mbps 1600
+    write /sys/class/devfreq/soc:qcom,npu-llcc-ddr-bw/max_freq 7980
+
+    write /sys/class/devfreq/soc:qcom,npu-npu-llcc-bw/polling_interval 40
+    write /sys/class/devfreq/soc:qcom,npu-npu-llcc-bw/bw_hwmon/mbps_zones "2288 4577 7110 9155 12298 14236 15258"
+    write /sys/class/devfreq/soc:qcom,npu-npu-llcc-bw/bw_hwmon/sample_ms 4
+    write /sys/class/devfreq/soc:qcom,npu-npu-llcc-bw/bw_hwmon/io_percent 80
+    write /sys/class/devfreq/soc:qcom,npu-npu-llcc-bw/bw_hwmon/hist_memory 20
+    write /sys/class/devfreq/soc:qcom,npu-npu-llcc-bw/bw_hwmon/hyst_length 10
+    write /sys/class/devfreq/soc:qcom,npu-npu-llcc-bw/bw_hwmon/down_thres 30
+    write /sys/class/devfreq/soc:qcom,npu-npu-llcc-bw/bw_hwmon/guard_band_mbps 0
+    write /sys/class/devfreq/soc:qcom,npu-npu-llcc-bw/bw_hwmon/up_scale 250
+    write /sys/class/devfreq/soc:qcom,npu-npu-llcc-bw/bw_hwmon/idle_mbps 1600
+    write /sys/class/devfreq/soc:qcom,npu-npu-llcc-bw/max_freq 15258
+
+    write /sys/class/devfreq/soc:qcom,npudsp-npu-ddr-bw/polling_interval 40
+    write /sys/class/devfreq/soc:qcom,npudsp-npu-ddr-bw/bw_hwmon/mbps_zones "1720 2929 3879 5931 6881 7980"
+    write /sys/class/devfreq/soc:qcom,npudsp-npu-ddr-bw/bw_hwmon/sample_ms 4
+    write /sys/class/devfreq/soc:qcom,npudsp-npu-ddr-bw/bw_hwmon/io_percent 80
+    write /sys/class/devfreq/soc:qcom,npudsp-npu-ddr-bw/bw_hwmon/hist_memory 20
+    write /sys/class/devfreq/soc:qcom,npudsp-npu-ddr-bw/bw_hwmon/hyst_length 10
+    write /sys/class/devfreq/soc:qcom,npudsp-npu-ddr-bw/bw_hwmon/down_thres 30
+    write /sys/class/devfreq/soc:qcom,npudsp-npu-ddr-bw/bw_hwmon/guard_band_mbps 0
+    write /sys/class/devfreq/soc:qcom,npudsp-npu-ddr-bw/bw_hwmon/up_scale 250
+    write /sys/class/devfreq/soc:qcom,npudsp-npu-ddr-bw/bw_hwmon/idle_mbps 1600
+    write /sys/class/devfreq/soc:qcom,npudsp-npu-ddr-bw/max_freq 7980
+    write /sys/devices/virtual/npu/msm_npu/pwr 0
+
+    # Enable memlat governor
+    write /sys/class/devfreq/18590000.qcom,devfreq-l3:qcom,cdsp-cdsp-l3-lat/governor "cdspl3"
+
+    # Turn on sleep modes.
+    write /sys/module/lpm_levels/parameters/sleep_disabled 0
+
+    # Timwout to freeze all user space processes or all freezable kernel threads
+    write /sys/power/pm_freeze_timeout 5000
+
+    # Enable ZRAM on boot_complete
+    write /sys/block/zram0/comp_algorithm "zstd"
+    write /proc/sys/vm/page-cluster 0
+    swapon_all /vendor/etc/fstab.${ro.hardware}
+
+on property:debug.oculus.cpu_governor=*
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor ${debug.oculus.cpu_governor}
