@@ -1,0 +1,7 @@
+<manifest version="1.0" type="framework">
+  <hal format="aidl">
+    <name>meta.internal.diagnostics</name>
+    <version>1</version>
+    <fqname>ICrashUploaderService/default</fqname>
+  </hal>
+</manifest>

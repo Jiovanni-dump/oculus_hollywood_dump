@@ -1,0 +1,7 @@
+<!--
+    Indicates that this device supports the system settings for configuring refresh rate. This was
+    done for Quest 2, but then made non-configurable in later devices.
+-->
+<permissions>
+    <feature name="oculus.software.settings.refresh_rate" />
+</permissions>

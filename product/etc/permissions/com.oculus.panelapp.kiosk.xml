@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.oculus.panelapp.kiosk">
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.GRANT_RUNTIME_PERMISSIONS"/>
+        <permission name="android.permission.REVOKE_RUNTIME_PERMISSIONS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.SET_ACTIVITY_WATCHER"/>
+        <permission name="android.permission.BLUETOOTH_ADVERTISE"/>
+        <permission name="android.permission.BLUETOOTH_CONNECT"/>
+        <permission name="android.permission.BLUETOOTH_SCAN"/>
+        <permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
+    </privapp-permissions>
+</permissions>

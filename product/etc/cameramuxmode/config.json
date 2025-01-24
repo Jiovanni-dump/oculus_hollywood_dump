@@ -1,0 +1,77 @@
+{
+  "default": {
+    "consumerToFrameTypesMap": {
+      "InsideOutTrackingEngine": [
+        "GENERIC_SLOT_0"
+      ],
+      "ConstellationTrackingEngine": [
+        "GENERIC_SLOT_1"
+      ],
+      "MrSystemService": [
+        "GENERIC_SLOT_0"
+      ],
+      "ObjectTrackingEngine": [
+        "GENERIC_SLOT_0"
+      ]
+    },
+    "frameConfiguration": [
+      "GENERIC_SLOT_0",
+      "GENERIC_SLOT_1"
+    ],
+    "frameTypeToExposureAlgorithmMap": {
+      "GENERIC_SLOT_0": "InsideOutTracking",
+      "GENERIC_SLOT_1": "ConstellationTracking"
+    }
+  },
+  "HandTracking": {
+    "consumerToFrameTypesMap": {
+      "HandTrackingEngine": [
+        "GENERIC_SLOT_1"
+      ],
+      "InsideOutTrackingEngine": [
+        "GENERIC_SLOT_0"
+      ],
+      "MrSystemService": [
+        "GENERIC_SLOT_0"
+      ],
+      "ObjectTrackingEngine": [
+        "GENERIC_SLOT_0",
+        "GENERIC_SLOT_1"
+      ]
+    },
+    "frameConfiguration": [
+      "GENERIC_SLOT_0",
+      "GENERIC_SLOT_1"
+    ],
+    "frameTypeToExposureAlgorithmMap": {
+      "GENERIC_SLOT_0": "InsideOutTracking",
+      "GENERIC_SLOT_1": "HandTracking"
+    }
+  },
+  "HandTrackingUseIOT": {
+    "consumerToFrameTypesMap": {
+      "HandTrackingEngine": [
+        "GENERIC_SLOT_0",
+        "GENERIC_SLOT_1"
+      ],
+      "InsideOutTrackingEngine": [
+        "GENERIC_SLOT_0"
+      ],
+      "MrSystemService": [
+        "GENERIC_SLOT_0"
+      ],
+      "ObjectTrackingEngine": [
+        "GENERIC_SLOT_0",
+        "GENERIC_SLOT_1"
+      ]
+    },
+    "frameConfiguration": [
+      "GENERIC_SLOT_0",
+      "GENERIC_SLOT_1"
+    ],
+    "frameTypeToExposureAlgorithmMap": {
+      "GENERIC_SLOT_0": "InsideOutTracking",
+      "GENERIC_SLOT_1": "HandTracking"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+<!-- Indicates that device has user detection hardware present -->
+<permissions>
+    <feature name="oculus.hardware.user_detection" />
+</permissions>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+  <exception
+    package="com.oculus.presence">
+    <permission name="android.permission.CAMERA" fixed="false" />
+    <permission name="android.permission.RECORD_AUDIO" fixed="false"/>
+    <permission name="com.oculus.permission.CODEC_AVATAR" fixed="false" />
+    <permission name="com.oculus.permission.FACE_EYE_INTERNAL_API" fixed="false" />
+  </exception>
+</exceptions>

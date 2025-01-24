@@ -1,0 +1,78 @@
+####################################
+# from generate-common-build-props
+# These properties identify this partition image.
+####################################
+ro.product.product.brand=oculus
+ro.product.product.device=hollywood
+ro.product.product.manufacturer=Oculus
+ro.product.product.model=Quest 2
+ro.product.product.name=hollywood
+ro.product.build.date=Wed Dec 18 21:08:52 PST 2024
+ro.product.build.date.utc=1734584932
+ro.product.build.fingerprint=oculus/hollywood/hollywood:12/SQ3A.220605.009.A1/51272100091300150:user/release-keys
+ro.product.build.id=SQ3A.220605.009.A1
+ro.product.build.tags=release-keys
+ro.product.build.type=user
+ro.product.build.version.incremental=51272100091300150
+ro.product.build.version.release=12
+ro.product.build.version.release_or_codename=12
+ro.product.build.version.sdk=32
+####################################
+# from device/meta/kona-common/product.prop
+####################################
+####################################
+# from device/meta/hollywood/product.prop
+####################################
+# Display
+ovr.panel.adjust_colorspace=1
+ovr.panel.white_point.x=0.3127
+ovr.panel.white_point.y=0.3290
+debug.oculus.forceChroma=1
+ro.minui.default_rotation=ROTATION_LEFT
+ro.minui.pixel_format=RGBX_8888
+# how long bootanimation is allowed to run after surfaceflinger started
+ro.boot.bootanimation_overrun_timeout=20
+# Physical density is 560 but we scale for VrUI's sake
+ro.sf.lcd_density_scale=0.29
+ro.ovr.displaydensity=20
+ro.ovr.layoutscale=1.25
+# MaintenanceBoot
+ro.maintenanceboot.device_enabled=true
+ro.maintenanceboot.battery_percent_threshold=35
+ro.maintenanceboot.time_since_last_boot_threshold_sec=43200
+ro.maintenanceboot.time_since_charging_threshold_sec=600
+# NUX
+# Sets NUX flow specific to this device. Each device may have a different NUX flow.
+persist.ovr.nux_flow_version=2
+# Shell
+ro.ovr.default_environment=apk://com.oculus.environment.prod.bubbles/assets/scene.zip
+# Surface Flinger
+persist.ovr.global_cac=1
+# SystemUX WiFi Modal
+# Toggle for the enhanced wifi modal
+# 0 - Toggled off
+# 1 - Toggled on
+persist.ovr.system_ux_wifi_modal_toggle=1
+# Telemetry
+persist.vendor.oculus.sensor.service.enable_high_frequency_telemetry=true
+ro.config.max_number_of_active_tasks=10000
+ro.config.telemetry_disk_size_limit_bytes=524288000
+ro.config.upload_store_size_threshold=104857600
+# Timewarp
+ro.ovr.timewarpCpuAffinity=7
+# Wifi
+ovr.wifi.sta.mcc_time_percent=80
+ovr.wifi.band_2g.ota.sta.mcc_time_percent=80
+####################################
+# from variable ADDITIONAL_PRODUCT_PROPERTIES
+####################################
+ro.build.characteristics=nosdcard
+ro.product.ab_ota_partitions=abl,aop,boot,cmnlib,cmnlib64,devcfg,dtbo,hyp,imagefv,keymaster,modem,odm,qupfw,recovery,system,system_ext,tz,uefisecapp,vbmeta,vbmeta_system,vbmeta_vendor,vendor,product,xbl,xbl_config
+####################################
+# from variable PRODUCT_PRODUCT_PROPERTIES
+####################################
+surface_flinger.use_min_framebuffer_surface=true
+# Auto-added by post_process_props.py
+persist.sys.usb.config=none
+# end of file
+

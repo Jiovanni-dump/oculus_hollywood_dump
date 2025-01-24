@@ -1,0 +1,126 @@
+{
+  "version": 3,
+  "cameraSystems": {
+    "worldTracking": {
+      "niceEnabled": true,
+      "configurations": {
+        "default": {
+          "frameRateVariant": "utility",
+          "frameRateMultiplier": 1.0,
+          "slots": [
+            {"label": "0:0", "cameraIds": [0, 1, 2, 3]},
+            {"label": "1:0", "cameraIds": [0, 1, 2, 3]},
+            {"label": "2:0", "cameraIds": [0, 1, 2, 3]},
+            {"label": "3:0", "cameraIds": [0, 1, 2, 3]}
+          ]
+        }
+      },
+      "modes": [
+        {
+          "name": "default",
+          "configuration": "default",
+          "purposes": [
+            {"name": "iot", "slots": [0, 2]},
+            {"name": "hand", "slots": []},
+            {"name": "constellation", "slots": [1, 3]},
+            {"name": "object", "slots": [0, 2]},
+            {"name": "mr_monochrome", "slots": [0, 2], "cameraIds": [1, 2]},
+            {"name": "active_slots", "slots": [0, 1, 2, 3]}
+          ],
+          "controlPurposes": [
+            {"name": "iotExposureControl", "slots": [0, 2]},
+            {"name": "handExposureControl", "slots": []},
+            {"name": "constellationExposureControl", "slots": [1, 3]}
+          ],
+          "capabilities": {
+            "constellation_led": {"slots": [1, 3]}
+          },
+          "frameTags": [1, 0, 1, 0],
+          "fidelities": [
+            {"name": "hands", "levelRange": [0, 0]},
+            {"name": "constellation", "levelRange": [1, 5]},
+            {"name": "keyboard", "levelRange": [1, 5]},
+            {"name": "iot", "levelRange": [2, 5]}
+          ]
+        },
+        {
+          "name": "handTracking",
+          "configuration": "default",
+          "purposes": [
+            {"name": "iot", "slots": [0, 2]},
+            {"name": "hand", "slots": [1, 3]},
+            {"name": "constellation", "slots": []},
+            {"name": "object", "slots": [0, 1, 2, 3]},
+            {"name": "mr_monochrome", "slots": [0, 2], "cameraIds": [1, 2]},
+            {"name": "active_slots", "slots": [0, 1, 2, 3]}
+          ],
+          "controlPurposes": [
+            {"name": "iotExposureControl", "slots": [0, 2]},
+            {"name": "handExposureControl", "slots": [1, 3]},
+            {"name": "constellationExposureControl", "slots": []}
+          ],
+          "capabilities": {},
+          "frameTags": [1, 2, 1, 2],
+          "fidelities": [
+            {"name": "hands", "levelRange": [1, 4]},
+            {"name": "constellation", "levelRange": [0, 0]},
+            {"name": "keyboard", "levelRange": [1, 5]},
+            {"name": "iot", "levelRange": [2, 5]}
+          ]
+        },
+        {
+          "name": "handTrackingExtraSlots",
+          "configuration": "default",
+          "purposes": [
+            {"name": "iot", "slots": [0, 2]},
+            {"name": "hand", "slots": [0, 1, 2, 3]},
+            {"name": "constellation", "slots": []},
+            {"name": "object", "slots": [0, 1, 2, 3]},
+            {"name": "mr_monochrome", "slots": [0, 2], "cameraIds": [1, 2]},
+            {"name": "active_slots", "slots": [0, 1, 2, 3]}
+          ],
+          "controlPurposes": [
+            {"name": "iotExposureControl", "slots": [0, 2]},
+            {"name": "handExposureControl", "slots": [1, 3]},
+            {"name": "constellationExposureControl", "slots": []}
+          ],
+          "capabilities": {},
+          "frameTags": [1, 2, 1, 2],
+          "fidelities": [
+            {"name": "hands", "levelRange": [5, 5]},
+            {"name": "constellation", "levelRange": [0, 0]},
+            {"name": "keyboard", "levelRange": [1, 5]},
+            {"name": "iot", "levelRange": [2, 5]}
+          ]
+        },
+        {
+          "name": "handsAndControllers",
+          "configuration": "default",
+          "purposes": [
+            {"name": "iot", "slots": [0, 2]},
+            {"name": "hand", "slots": [0, 2]},
+            {"name": "constellation", "slots": [1, 3]},
+            {"name": "object", "slots": [0, 2]},
+            {"name": "mr_monochrome", "slots": [0, 2], "cameraIds": [1, 2]},
+            {"name": "active_slots", "slots": [0, 1, 2, 3]}
+          ],
+          "controlPurposes": [
+            {"name": "iotExposureControl", "slots": [0, 2]},
+            {"name": "handExposureControl", "slots": []},
+            {"name": "constellationExposureControl", "slots": [1, 3]}
+          ],
+          "capabilities": {
+            "constellation_led": {"slots": [1, 3]}
+          },
+          "frameTags": [1, 0, 1, 0],
+          "fidelities": [
+            {"name": "iot", "levelRange": [2, 5]},
+            {"name": "constellation", "levelRange": [1, 5]},
+            {"name": "hands", "levelRange": [1, 4]},
+            {"name": "keyboard", "levelRange": [1, 5]}
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary. -->
+<permissions>
+    <privapp-permissions package="com.oculus.q4bservice">
+        <permission name="android.permission.CLEAR_APP_CACHE"/>
+        <permission name="android.permission.CLEAR_APP_USER_DATA"/>
+        <permission name="android.permission.DISPATCH_PROVISIONING_MESSAGE"/>
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.NETWORK_SETTINGS"/>
+        <permission name="android.permission.SET_TIME_ZONE"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    </privapp-permissions>
+</permissions>

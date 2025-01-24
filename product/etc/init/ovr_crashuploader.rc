@@ -1,0 +1,6 @@
+# Crash uploader daemon
+service crashuploader /product/bin/ovr_crashuploader64
+    class main
+    user system
+    group system inet
+    task_profiles ServiceCapacityLow ServicePerformance
