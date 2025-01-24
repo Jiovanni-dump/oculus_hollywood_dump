@@ -1,0 +1,49 @@
+{
+    "engine": {
+        "ambisonic_order": 1,
+        "room_acoustics_level": 0,
+        "max_num_objects": 64,
+        "hq_object_limit": 12,
+        "room_acoustics": {
+            "reverb_enabled": true,
+            "reverb_level_db": 0,
+            "reflections_enabled": true,
+            "reflection_send_level_db": -3,
+            "meridian_enabled": false,
+            "yarra_room": {
+                "width": 6.0,
+                "height": 3.0,
+                "depth": 4.0,
+                "leftMaterial": "GypsumBoard",
+                "rightMaterial": "GypsumBoard",
+                "ceilingMaterial": "AcousticTile",
+                "floorMaterial": "WoodFloor",
+                "frontMaterial": "GypsumBoard",
+                "backMaterial": "GypsumBoard",
+                "clutterFactor": 0.9
+            }
+        },
+        "preallocate_audio_buffers": false,
+        "hrtf_model": "/vendor/etc/HRTF_KS.hrtf"
+    },
+    "window_stream": {
+        "reverb_send_level_db": -24,
+        "distance_attenutation": {
+            "strategy": "inverse_squared",
+            "range_min": 2,
+            "range_max": 10
+        }
+    },
+    "window_audio": {
+        "spatial_crossfade_duration_in_ms": 25,
+        "window_speaker_stereo_gain_db": -2.0,
+        "window_speaker_mono_gain_db": 0.0,
+        "position_change_spring_enabled": true,
+        "position_change_spring_constant": 10.0,
+        "orientation_change_spring_enabled": true,
+        "orientation_change_spring_constant": 10.0
+    },
+    "mixer_thread": {
+        "package_blocklist": ["com.oculus.vrshell", "com.oculus.firsttimenux"]
+    }
+}

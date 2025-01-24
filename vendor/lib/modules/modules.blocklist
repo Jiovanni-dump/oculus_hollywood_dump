@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: GPL-2.0-only
+blocklist cdc_ether
+blocklist cdc_ncm
+blocklist pdfu_initiator
+blocklist pinctrl_lpi_dlkm
+blocklist r8152
+blocklist rdbg
+blocklist rndis_host
+blocklist rtl8150
+blocklist usbnet
+blocklist wlan

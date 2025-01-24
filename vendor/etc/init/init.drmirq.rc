@@ -1,0 +1,12 @@
+on init
+    start drmirq_sh
+
+service drmirq_sh /vendor/bin/init.drmirq.sh
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+on property:ro.vendor.drm.irq=* && property:sys.hmt.mounted=1
+    write /proc/irq/${ro.vendor.drm.irq}/smp_affinity ${vendor.drm.irq_affinity:-f}

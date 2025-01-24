@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<configuration version="1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:include href="audio_policy_engine_product_strategies.xml"/>
+    <xi:include href="audio_policy_engine_stream_volumes.xml"/>
+    <xi:include href="default_volume_tables.xml"/>
+</configuration>

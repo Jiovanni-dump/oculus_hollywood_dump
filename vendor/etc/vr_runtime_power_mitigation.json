@@ -1,0 +1,4 @@
+{
+    "comment": "Matches the previous hardcoded configuration",
+    "compact": "dblg:B1;nb:T1;dr1:T1;dr2:T2;dr3:T3;fps1:T2B1;fps3:T3;dvfs:T2B1;ffr1:B1;ffr2:B1;ffr3:T2B1;ndc:T3"
+}
